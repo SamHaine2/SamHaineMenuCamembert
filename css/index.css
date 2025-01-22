@@ -5,7 +5,7 @@ body {
   }
   
   a {
-    color: #000;
+    color: grey;
   }
   
   /* header */
@@ -16,6 +16,7 @@ body {
     position: fixed;
     width: 100%;
     z-index: 3;
+    /* sert à mettre un niveau qui décidera si l'élément superposé sur un autre élément ou si il est en dessous de l'élément  */
   }
   
   .header ul {
@@ -23,6 +24,7 @@ body {
     padding: 0;
     list-style: none;
     overflow: hidden;
+    /* quand le texte dépasse de la zone prévu le overflow décide si il est cacher, si il faut scroller, ... */
     background-color: #fff;
   }
   
@@ -50,6 +52,7 @@ body {
   
   .header .menu {
     clear: both;
+    /* Il empêche un élément de s'afficher à côté des éléments flottants. */
     max-height: 0;
     transition: max-height .2s ease-out;
   }
@@ -58,11 +61,14 @@ body {
   
   .header .menu-icon {
     cursor: pointer;
-    /*display: inline-block;*/
+    /* fait disparaitre le curseur quand on passe sur l'élément */
     float: right;
+    /* permet de faire flotter un élément sur le coté droit de son conteneur tout en laissant le texte et 
+    les autres éléments s'enrouler autour. */
     padding: 28px 20px;
     position: relative;
     user-select: none;
+    /* empeche l'utilisateur de séléctionné a la souris l'élément */
   }
   
   .header .menu-icon .navicon {
@@ -101,6 +107,7 @@ body {
   
   .header .menu-btn:checked ~ .menu {
     max-height: 240px;
+    /* si la case est séléctionner alors jouer l'animation */
   }
   
   .header .menu-btn:checked ~ .menu-icon .navicon {
@@ -121,7 +128,9 @@ body {
   }
   
   /* 48em = 768px */
-  
+  /* permet de créer des requêtes média 
+  pour adapter l'affichage d'un site en fonction des caractéristiques de l'écran ou 
+  de l'appareil de l'utilisateur */
   @media (min-width: 48em) {
     .header li {
       float: left;
